@@ -1,23 +1,22 @@
-// arquivo/index.js
+const express = require('express');
+const cors = require('cors');
 
-const express = require('express')
+const app = express();
+const port = process.env.PORT || 3000;
+const { userRouter } = require('./routes/user');
+const { loginRouter } = require('./routes/login');
+const { playerRouter } = require('./routes/player');
 
-const { User } = require('./models')
-
-const app = express()
-const port = process.env.PORT || 3000
+app.use(cors());
 
 app.use(express.json());
 
-app.get('/', (req, res) => res.status(200).json({message: "teste"}));
+app.use('/user', userRouter);
 
-app.post('/user', async (req, res) => {
+app.use('/login', loginRouter);
 
-  const { name } = req.body;
+app.use('/player', playerRouter);
 
-  const user = await User.create({ name });
-
-  return res.status(201).json(user);
-});
+app.get('/', (req, res) => res.status(200).json({ message: 'teste' }));
 
 app.listen(port, () => console.log(`Servidor online na porta ${port}`));
