@@ -6,7 +6,7 @@ module.exports = {
         field: 'user_id',
         references: {
           model: 'Users',
-          key: 'id',
+          key: 'user_id',
         },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
@@ -17,7 +17,7 @@ module.exports = {
         field: 'player_id',
         references: {
           model: 'Players',
-          key: 'id',
+          key: 'player_id',
         },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',

@@ -2,21 +2,24 @@ module.exports = (sequelize) => {
   const UserPlayer = sequelize.define(
     'UserPlayer',
     {},
-    { timestamps: false },
+    {
+      tableName: 'UserPlayers',
+      timestamps: false,
+    },
   );
 
   UserPlayer.associate = (models) => {
     models.Player.belongsToMany(models.User, {
       as: 'users',
       through: UserPlayer,
-      foreignKey: 'id',
-      otherKey: 'id',
+      foreignKey: 'player_id',
+      otherKey: 'user_id',
     });
     models.User.belongsToMany(models.Player, {
       as: 'players',
       through: UserPlayer,
-      foreignKey: 'id',
-      otherKey: 'id',
+      foreignKey: 'user_id',
+      otherKey: 'player_id',
     });
   };
 

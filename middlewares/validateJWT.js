@@ -12,7 +12,7 @@ const validateJWT = async (req, res, next) => {
   }
   try {
     const decoded = jwt.verify(token, secret);
-    const user = await User.findOne({ where: { id: decoded.data.id } });
+    const user = await User.findOne({ where: { userId: decoded.data.id } });
     res.locals.user = user;
     if (!user) {
       return res.status(401).json({ message: 'Expired or invalid token' });
