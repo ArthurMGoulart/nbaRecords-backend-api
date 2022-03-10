@@ -6,7 +6,6 @@ const login = async (req, res) => {
     const token = await UserService.login(req.body);
     return res.status(200).json(token);
   } catch (e) {
-    console.log(e);
     const { code, message } = e;
     return res.status(errorStatus[code]).json({ message });
   }
@@ -17,7 +16,6 @@ const signUp = async (req, res) => {
     const token = await UserService.signUp(req.body);
     return res.status(201).json(token);
   } catch (e) {
-    console.log(e);
     const { code, message } = e;
     return res.status(errorStatus[code]).json({ message });
   }

@@ -17,6 +17,6 @@ app.use('/login', loginRouter);
 
 app.use('/player', playerRouter);
 
-app.get('/', (req, res) => res.status(200).json({ message: 'teste' }));
+app.get('/', (req, res) => res.status(200).json({ message: `Running Server at ${port}` }));
 
 app.listen(port, () => console.log(`Servidor online na porta ${port}`));
