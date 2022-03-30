@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const userSchema = Joi.object({
+const signUpSchema = Joi.object({
   name: Joi.string().min(3).max(30).required()
     .messages({
       'string.base': 'Name must be a string',
@@ -28,6 +28,6 @@ const loginSchema = Joi.object({
 });
 
 module.exports = {
-  userSchema,
+  signUpSchema,
   loginSchema,
 };

@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const { signupRouter } = require('./routes/signup');
+const { signUpRouter } = require('./routes/signUp');
 const { loginRouter } = require('./routes/login');
 const { playerRouter } = require('./routes/player');
 
@@ -11,7 +11,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/signup', signupRouter);
+app.use('/signup', signUpRouter);
 
 app.use('/login', loginRouter);
 
