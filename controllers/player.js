@@ -1,8 +1,8 @@
-const PlayerService = require('../services/player');
+const { playerService } = require('../services');
 
 const getAll = async (req, res) => {
   try {
-    const players = await PlayerService.getAll();
+    const players = await playerService.getAll();
     return res.status(200).json(players);
   } catch (e) {
     return res.status(500).json(e.message);
@@ -12,7 +12,7 @@ const getAll = async (req, res) => {
 const getById = async (req, res) => {
   try {
     const { id } = req.params;
-    const player = await PlayerService.getById(id);
+    const player = await playerService.getById(id);
     return res.status(200).json(player);
   } catch (e) {
     return res.status(500).json(e.message);
@@ -23,7 +23,7 @@ const associatePlayer = async (req, res) => {
   try {
     const { id } = req.params;
     const { user } = res.locals;
-    await PlayerService.associatePlayer(id, user);
+    await playerService.associatePlayer(id, user);
     return res.status(200).send('Associated!');
   } catch (e) {
     return res.status(500).json(e.message);
@@ -33,7 +33,7 @@ const associatePlayer = async (req, res) => {
 const getPlayersByUser = async (req, res) => {
   try {
     const { user: { dataValues: { userId } } } = res.locals;
-    const players = await PlayerService.getPlayersByUser(userId);
+    const players = await playerService.getPlayersByUser(userId);
     return res.status(200).json(players);
   } catch (e) {
     return res.status(500).json(e.message);
