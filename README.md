@@ -61,8 +61,8 @@ Requisições para a API devem seguir os padrões:
 #### Dados para envio no [POST/signup]
 | Parâmetro | Validação | Descrição |
 |---|---|---|
-| `name` | String, min 3 char, max 30 char | `Nome do usuário` |
-| `password` | String, min 6 char | `Senha do usuário` |
+| `name` | `String`, min 3 characteres, max 30 characteres | `Nome do usuário` |
+| `password` | `String`, min 6 characteres | `Senha do usuário` |
 
 + Request (application/json)
 
@@ -81,7 +81,6 @@ Requisições para a API devem seguir os padrões:
                 "token": "[token_da_sessão]",
             }
             
-            ### Utilizando  [POST/login]
 
 #### Dados para envio no [POST/user/:id]
 | Parâmetro | Descrição |
