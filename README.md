@@ -35,7 +35,7 @@ Requisições para a API devem seguir os padrões:
 
 #### Dados para envio no [POST/signup]
 | Parâmetro | Validação | Descrição |
-|---|---|
+|---|---|---|
 | `name` | String, min 3 char, max 30 char | `Nome do novo usuário` |
 | `password` | String, min 6 char | `Senha do novo usuário` |
 
@@ -60,7 +60,7 @@ Requisições para a API devem seguir os padrões:
 
 #### Dados para envio no [POST/signup]
 | Parâmetro | Validação | Descrição |
-|---|---|
+|---|---|---|
 | `name` | String, min 3 char, max 30 char | `Nome do usuário` |
 | `password` | String, min 6 char | `Senha do usuário` |
 
