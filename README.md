@@ -23,7 +23,7 @@ Requisições para a API devem seguir os padrões:
 ## Entry Points
 Requisições para a API devem seguir os padrões:
 | Método | Path | Descrição |
-|---|---|
+|---|---|---|
 | `POST` | `/signup` | Faz o registro de um novo usuário, retornando seu token da sessão. |
 | `POST` | `/login` | Faz a conexão com o usuário com correspondente email e senha, retornando seu token da sessão. |
 | `POST` | `/user/:id` | Faz a associação do usuário com o Jogador que possue o id passado no parâmetro da url. |
