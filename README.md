@@ -86,7 +86,7 @@ Requisições para a API devem seguir os padrões:
 #### Dados para envio no [POST/user/:id]
 | Parâmetro | Descrição |
 |---|---|
-| `token` `Token da Sessão` |
+| `token` | `Token da Sessão` |
 
 + Request (application/json)
 
