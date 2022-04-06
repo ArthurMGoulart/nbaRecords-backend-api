@@ -2,11 +2,11 @@ const express = require('express');
 const { validateJWT } = require('../middlewares/validateJWT');
 
 const nbaRouter = express.Router();
-const { playerController } = require('../controllers');
+const { nbaController } = require('../controllers');
 
-nbaRouter.get('/', validateJWT, playerController.getAll);
+nbaRouter.get('/', validateJWT, nbaController.getAll);
 
-nbaRouter.get('/:id', validateJWT, playerController.getById);
+nbaRouter.get('/:id', validateJWT, nbaController.getById);
 
 module.exports = {
   nbaRouter,

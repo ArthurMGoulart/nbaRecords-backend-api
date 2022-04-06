@@ -20,3 +20,5 @@ app.use('/nba', nbaRouter);
 app.get('/', (req, res) => res.status(200).json({ message: 'Running Server Nba Records' }));
 
 app.listen(port, () => console.log(`Servidor online na porta ${port}`));
+
+module.exports = app;

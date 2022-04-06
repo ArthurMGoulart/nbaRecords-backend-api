@@ -1,12 +1,12 @@
 const express = require('express');
 const { validateJWT } = require('../middlewares/validateJWT');
-const { playerController } = require('../controllers');
+const { nbaController } = require('../controllers');
 
 const userRouter = express.Router();
 
-userRouter.get('/players', validateJWT, playerController.getPlayersByUser);
+userRouter.get('/players', validateJWT, nbaController.getPlayersByUser);
 
-userRouter.post('/:id', validateJWT, playerController.associatePlayer);
+userRouter.post('/:id', validateJWT, nbaController.associatePlayer);
 
 module.exports = {
   userRouter,
